@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/openai/codex-cli/main/packages/codex-cli/schemas/commands.schema.json",
+  "commands": [
+    {
+      "name": "/goal-alignment",
+      "description": "Launch the GrezOS goal alignment strategy prompt.",
+      "promptPath": ".codex/subagents/goal-alignment.md"
+    },
+    {
+      "name": "/daily-brief",
+      "description": "Kick off the GrezOS daily brief orchestrator prompt.",
+      "promptPath": ".codex/subagents/daily-brief.md"
+    },
+    {
+      "name": "/nightly-recap",
+      "description": "Summon the nightly recap prompt that reviews notes, goals, and action plans.",
+      "promptPath": ".codex/subagents/nightly-recap.md"
+    },
+    {
+      "name": "/daily-tasks",
+      "description": "Plan today’s priorities and update daily notes with carry-overs.",
+      "promptPath": ".codex/subagents/daily-task-intake.md"
+    },
+    {
+      "name": "/brain-dump",
+      "description": "Capture an unstructured brain dump and save it with a timestamp.",
+      "promptPath": ".codex/subagents/brain-dump.md"
+    },
+    {
+      "name": "/weekly-checkin",
+      "description": "Run the adaptive weekly metrics review and generate a report.",
+      "promptPath": ".codex/subagents/weekly-checkin.md"
+    },
+    {
+      "name": "/daily-checkin",
+      "description": "Log daily reflections and trigger the analytical recap.",
+      "promptPath": ".codex/subagents/daily-checkin.md"
+    },
+    {
+      "name": "/new-project",
+      "description": "Start the new project launchboard workflow and generate full documentation scaffolding.",
+      "promptPath": ".codex/subagents/new-project.md"
+    },
+    {
+      "name": "/new-prd",
+      "description": "Interactively author a complete Product Requirement Document for a new feature.",
+      "promptPath": ".codex/subagents/new-prd.md"
+    },
+    {
+      "name": "/newsletter-research",
+      "description": "Analyze competitor newsletters and draft this week’s issue.",
+      "promptPath": ".codex/subagents/newsletter-research.md"
+    },
+    {
+      "name": "/brain-dump-analysis",
+      "description": "Synthesize insights across brain dumps into actionable reports.",
+      "promptPath": ".codex/subagents/brain-dump-analysis.md"
+    }
+  ]
+}

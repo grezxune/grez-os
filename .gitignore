@@ -1,0 +1,22 @@
+# Externalized personal data (keep README placeholders only)
+action-plan/**
+!action-plan/README.md
+daily-brief/**
+!daily-brief/README.md
+data/**
+!data/README.md
+goals/**
+!goals/README.md
+journal/**
+!journal/README.md
+metrics/**
+!metrics/README.md
+newsletter/**
+!newsletter/README.md
+notes/**
+!notes/README.md
+todos/**
+!todos/README.md
+
+# Local overrides
+config/storage.json
