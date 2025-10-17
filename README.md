@@ -158,5 +158,4 @@ Because storage is external, you can safely share the repository while each cont
 
 ## 📝 License
 
-Copyright © Tommy Trzebiatowski. All rights reserved. (Update with license file if sharing publicly.)
-
+GrezOS is distributed under the MIT License. See `LICENSE` for the full text.
