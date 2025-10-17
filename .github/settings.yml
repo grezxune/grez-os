@@ -1,0 +1,10 @@
+repository:
+  description: "GrezOS is a personal AI operating system that orchestrates goals, routines, and automation while keeping private data local."
+  license_template: mit
+  topics:
+    - personal-productivity
+    - ai
+    - automation
+    - operating-system
+    - life-management
+    - grezos
