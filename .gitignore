@@ -18,5 +18,8 @@ notes/**
 todos/**
 !todos/README.md
 
+# External storage symlinks (user-specific)
+storage/
+
 # Local overrides
 config/storage.json
