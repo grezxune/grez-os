@@ -47,6 +47,11 @@
       "promptPath": ".codex/subagents/new-prd.md"
     },
     {
+      "name": "/update",
+      "description": "Capture a quick life/task status update and archive it in the external storage path.",
+      "promptPath": ".codex/subagents/daily-updates.md"
+    },
+    {
       "name": "/newsletter-research",
       "description": "Analyze competitor newsletters and draft this week’s issue.",
       "promptPath": ".codex/subagents/newsletter-research.md"

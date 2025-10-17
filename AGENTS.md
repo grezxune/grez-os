@@ -97,6 +97,7 @@ All personal operational data (notes, goals, briefs, metrics, etc.) lives outsid
 - `/newsletter-research` — Analyzes competitor newsletters and drafts the next issue using `${GREZOS_STORAGE_PATH}/newsletter`.  
 - `/brain-dump` — Captures raw thoughts into timestamped notes at `${GREZOS_STORAGE_PATH}/notes/brain-dump`.  
 - `/brain-dump-analysis` — Synthesizes brain dumps into insights and action items.
+- `/update` — Logs quick life/task status updates to `${GREZOS_STORAGE_PATH}/updates`.
 
 ---
 

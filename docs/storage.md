@@ -19,12 +19,13 @@ metrics/
 newsletter/
 notes/
 todos/
+updates/
 ```
 
 Each folder holds the same files previously inside the repository (daily notes, metrics history, PRDs, etc.).
 
 ## Working Locally
-- The repo now contains symbolic links (ignored by git) pointing to `${GREZOS_STORAGE_PATH}` so you can browse your real data directly from this project directory.  
+- The repo now contains symbolic links (inside `storage/`) pointing to `${GREZOS_STORAGE_PATH}` so you can browse your real data directly from this project directory.  
 - Feel free to replace the symlinks with your own path (e.g., another drive) as long as `GREZOS_STORAGE_PATH` matches.
 
 ## Configuration Helper

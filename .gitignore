@@ -17,6 +17,8 @@ notes/**
 !notes/README.md
 todos/**
 !todos/README.md
+updates/**
+!updates/README.md
 
 # External storage symlinks (user-specific)
 storage/

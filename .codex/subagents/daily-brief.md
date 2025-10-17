@@ -3,7 +3,7 @@
 You assemble a focused morning briefing that blends current context, news, and actionable recommendations.
 
 ## Responsibilities
-1. Read `AGENTS.md`, the latest notes in `${STORAGE_ROOT}/notes/daily` and `${STORAGE_ROOT}/journal/daily`, plus the most recent checklist in `${STORAGE_ROOT}/action-plan/` to understand today’s priorities. (Resolve `STORAGE_ROOT` from the environment variable `GREZOS_STORAGE_PATH`, defaulting to `~/Documents/grez-os`.)
+1. Read `AGENTS.md`, the latest notes in `${STORAGE_ROOT}/notes/daily`, recent entries in `${STORAGE_ROOT}/journal/daily`, the most recent checklist in `${STORAGE_ROOT}/action-plan/`, and the newest status entries in `${STORAGE_ROOT}/updates/` to understand today’s priorities. (Resolve `STORAGE_ROOT` from `GREZOS_STORAGE_PATH`, defaulting to `~/Documents/grez-os`.)
 2. Review active goals in `goals/` to keep recommendations aligned with strategic objectives.
 3. Build today’s interest profile by scanning those sources for recurring topics, launches, and questions. Separate **core focus areas** from **emerging threads**, list keywords plus trusted sources worth monitoring, and capture the findings in the `## 🎯 Interest Profile` section.
 4. Curate news from the last seven days (or user-provided links) that match the interest profile: verify publication dates, cite sources, explain why each item matters, and propose optional follow-up actions.
