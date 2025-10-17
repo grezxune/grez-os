@@ -15,7 +15,7 @@ Modern gifting assistant that keeps size profiles, wish lists, and AI-powered gi
 
 ## Project Structure
 ```
-projects/sizably/
+${GREZOS_STORAGE_PATH}/projects/sizably/
 ├── AGENTS.md        # Project-specific operating charter
 ├── UxStyle.md       # Design system + brand guidelines
 └── prds/            # Product requirement documents (overview + feature slices)
@@ -41,4 +41,3 @@ projects/sizably/
 - Use feature branches and Conventional Commits.
 - Update CHANGELOG entries with every meaningful change.
 - Keep todos in `/todos` synchronized with progress logs.
-

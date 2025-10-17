@@ -70,7 +70,7 @@ GrezOS acts as a **personal orchestration layer** — a dynamic system that adap
 │   ├── 05_content_curator_prompt.md
 │   └── 06_daily_notes_prompt.md          # Surfaces and leverages daily brain dumps
 │
-└── projects/                     # New product launchboards (e.g., Sizably)
+└── projects/README.md            # Projects externalized to ${GREZOS_STORAGE_PATH}/projects (seed in docs/seeds/projects)
 ```
 
 All personal operational data (notes, goals, briefs, metrics, etc.) lives outside the repo at the path defined by `GREZOS_STORAGE_PATH` (default `~/Documents/grez-os`).
@@ -104,7 +104,7 @@ All personal operational data (notes, goals, briefs, metrics, etc.) lives outsid
 ## 📁 Personal Data Storage
 
 - Set `GREZOS_STORAGE_PATH` to the desired data root (defaults to `~/Documents/grez-os`).  
-- The following directories are expected beneath that path: `notes/`, `journal/`, `goals/`, `action-plan/`, `daily-brief/`, `metrics/`, `newsletter/`, `data/`, `todos/`.  
+- The following directories are expected beneath that path: `notes/`, `journal/`, `goals/`, `projects/`, `action-plan/`, `daily-brief/`, `metrics/`, `newsletter/`, `data/`, `todos/`.  
 - Contributors can symlink their personal data into the repo if convenient, but sensitive content should remain outside version control.  
 - Slash commands and subagents automatically resolve paths via this environment variable; ensure it is exported before running workflows.
 

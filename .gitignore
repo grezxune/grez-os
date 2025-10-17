@@ -15,6 +15,8 @@ newsletter/**
 !newsletter/README.md
 notes/**
 !notes/README.md
+projects/**
+!projects/README.md
 todos/**
 !todos/README.md
 updates/**

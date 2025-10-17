@@ -18,15 +18,20 @@ journal/
 metrics/
 newsletter/
 notes/
+projects/
 todos/
 updates/
 ```
 
-Each folder holds the same files previously inside the repository (daily notes, metrics history, PRDs, etc.).
+Each folder holds the same files previously inside the repository (daily notes, metrics history, project launchboards, PRDs, etc.).
 
 ## Working Locally
-- The repo now contains symbolic links (inside `storage/`) pointing to `${GREZOS_STORAGE_PATH}` so you can browse your real data directly from this project directory.  
+- The repo now contains symbolic links (inside `storage/`) pointing to `${GREZOS_STORAGE_PATH}` so you can browse your real data (including projects) directly from this project directory.  
 - Feel free to replace the symlinks with your own path (e.g., another drive) as long as `GREZOS_STORAGE_PATH` matches.
+
+## Seeding Example Projects
+- `docs/seeds/projects/sizably/` provides a reference launchboard.
+- Copy the seed folder into `${GREZOS_STORAGE_PATH}/projects/` (or run your own project generator) to bootstrap a new workspace.
 
 ## Configuration Helper
 - Copy `config/storage.example.json` to `config/storage.json` to record a local path (git-ignored).  

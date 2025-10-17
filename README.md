@@ -12,7 +12,7 @@ GrezOS orchestrates your goals, routines, and creative work through a set of sla
 - Goal & product orchestration: `/new-project`, `/new-prd`, modular launchboards.
 - Creativity & communication: `/brain-dump`, `/brain-dump-analysis`, `/newsletter-research`.
 - Portable storage: personal artifacts stay under `${GREZOS_STORAGE_PATH}` (default `~/Documents/grez-os`).
-- SaaS-ready templates: Example project `projects/sizably/` with AGENTS, UxStyle, README, and PRDs.
+- SaaS-ready templates: Seed project `docs/seeds/projects/sizably/` with AGENTS, UxStyle, README, and PRDs.
 
 ---
 
@@ -29,7 +29,7 @@ npm install # or bun install per global standards
 Personal data lives outside the repo. Choose a root (defaults to `~/Documents/grez-os`) and run:
 ```bash
 export GREZOS_STORAGE_PATH=~/Documents/grez-os
-mkdir -p "$GREZOS_STORAGE_PATH"/{action-plan,daily-brief,data,goals,journal,metrics,newsletter,notes,todos,updates}
+mkdir -p "$GREZOS_STORAGE_PATH"/{action-plan,daily-brief,data,goals,journal,metrics,newsletter,notes,projects,todos,updates}
 ```
 
 `storage/` contains symlinks to these folders so you can browse data locally without committing it.
@@ -50,7 +50,7 @@ export GREZOS_STORAGE_PATH="$(jq -r '.storagePath' /path/to/grez-os/config/stora
 | Area | Description |
 |------|-------------|
 | **Agents** | Slash commands defined under `.codex/subagents/`, invoked via Codex CLI. |
-| **Projects** | Launchboards in `projects/` (e.g., Sizably) with localized `AGENTS.md`, `UxStyle.md`, README, PRDs. |
+| **Projects** | Launchboards in `${GREZOS_STORAGE_PATH}/projects/` (symlink via `storage/projects`) with localized `AGENTS.md`, `UxStyle.md`, README, PRDs. |
 | **External Storage** | `${GREZOS_STORAGE_PATH}` holds notes, goals, briefs, metrics, updates, etc. |
 | **Symlinks** | `storage/` mirrors personal directories for convenience (ignored by git). |
 | **PRDs** | Product Requirement Documents capture features; `/new-prd` guides creation. |
@@ -70,7 +70,7 @@ export GREZOS_STORAGE_PATH="$(jq -r '.storagePath' /path/to/grez-os/config/stora
 | `/brain-dump` | Capture free-form thoughts | `${GREZOS_STORAGE_PATH}/notes/brain-dump/` |
 | `/brain-dump-analysis` | Extract insights & actions | `${GREZOS_STORAGE_PATH}/notes/brain-dump/analysis/` |
 | `/newsletter-research` | Research & draft newsletter | `${GREZOS_STORAGE_PATH}/newsletter/` |
-| `/new-project` | Spin up project launchboard | `projects/{slug}/` + copy to personal root |
+| `/new-project` | Spin up project launchboard | `${GREZOS_STORAGE_PATH}/projects/{slug}/` |
 | `/new-prd` | Author a Product Requirement Document | `${GREZOS_STORAGE_PATH}/prds/{feature}.md` |
 
 Each agent resolves `GREZOS_STORAGE_PATH` (fallback `~/Documents/grez-os`).
@@ -79,14 +79,14 @@ Each agent resolves `GREZOS_STORAGE_PATH` (fallback `~/Documents/grez-os`).
 
 ## 🗂 Example Project: Sizably
 
-`projects/sizably/` shows a full launchboard:
+`docs/seeds/projects/sizably/` ships a reference launchboard you can copy into `${GREZOS_STORAGE_PATH}/projects/`:
 
 - `AGENTS.md` — project charter aligned with global standards.
 - `UxStyle.md` — design system (colors #0cd6f5 + black, typography, components).
 - `README.md` — project-specific runbook.
 - `prds/` — multiple PRDs with frontmatter, statuses, and index.
 
-Use `/new-project` to replicate the workflow for your own SaaS ideas.
+Use `/new-project` to replicate the workflow directly into your `${GREZOS_STORAGE_PATH}/projects` directory.
 
 ---
 
@@ -102,12 +102,13 @@ ${GREZOS_STORAGE_PATH}/
 ├── metrics/
 ├── newsletter/
 ├── notes/
+├── projects/
 ├── todos/
 └── updates/
 ```
 
 Inside the repo:
-- `storage/` contains symlinks to each folder (ignored by git).
+- `storage/` contains symlinks to each folder (projects included, ignored by git).
 - `docs/storage.md` explains setup and portability.
 
 ---
@@ -130,7 +131,7 @@ Global rules (see `~/.codex/AGENTS.md`):
 1. Fork or clone the repo.
 2. Set `GREZOS_STORAGE_PATH` and create the external directories.
 3. Use slash commands via the Codex CLI to capture data.
-4. Launch new projects with `/new-project` and plan features through `/new-prd`.
+4. Launch new projects with `/new-project` (writes to `${GREZOS_STORAGE_PATH}/projects`) and plan features through `/new-prd`.
 5. Keep personal data out of git; share sanitized docs if collaborating.
 
 Because storage is external, you can safely share the repository while each contributor keeps their own data root.
@@ -141,7 +142,7 @@ Because storage is external, you can safely share the repository while each cont
 
 - `AGENTS.md` — GrezOS behavior and workflows.
 - `docs/storage.md` — personal storage configuration.
-- `projects/sizably/` — SaaS launchboard example.
+- `docs/seeds/projects/sizably/` — SaaS launchboard seed.
 - `config/storage.example.json` — template for local storage config.
 - `.codex/subagents/` — definitions for all slash commands.
 
@@ -149,7 +150,7 @@ Because storage is external, you can safely share the repository while each cont
 
 ## 🧭 Roadmap (High-Level)
 
-- Extend multi-project orchestration from the `projects/` folder.
+- Extend multi-project orchestration from `${GREZOS_STORAGE_PATH}/projects/`.
 - Integrate additional affiliate providers and richer analytics dashboards.
 - Automate beta tester recruitment loops for new SaaS launches.
 - Deliver cross-platform client experiences (web/mobile shells) that consume the same workflows.
