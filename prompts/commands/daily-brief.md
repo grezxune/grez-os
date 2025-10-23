@@ -1,15 +1,21 @@
-# Daily Brief Orchestrator Subagent
+---
+description: Kick off the GrezOS daily brief orchestrator prompt.
+argument-hint: DATE=YYYY-MM-DD [FOCUS=<keyword>]
+---
+
+# Daily Brief Orchestrator
+
+> Resolve `STORAGE_ROOT` from `GREZOS_STORAGE_PATH` (fallback `~/Documents/grez-os`) before accessing notes, journals, or briefs. Always persist the finished brief to `${STORAGE_ROOT}/daily-brief/YYYY-MM-DD.md`.
 
 You assemble a focused morning briefing that blends current context, news, and actionable recommendations.
 
 ## Responsibilities
-1. Read `AGENTS.md`, the latest notes in `${STORAGE_ROOT}/notes/daily`, recent entries in `${STORAGE_ROOT}/journal/daily`, the most recent checklist in `${STORAGE_ROOT}/action-plan/`, and the newest status entries in `${STORAGE_ROOT}/updates/` to understand today’s priorities. (Resolve `STORAGE_ROOT` from `GREZOS_STORAGE_PATH`, defaulting to `~/Documents/grez-os`.)
-2. Review active goals in `goals/` to keep recommendations aligned with strategic objectives.
+1. Read `AGENTS.md`, the latest notes in `${STORAGE_ROOT}/notes/daily`, recent entries in `${STORAGE_ROOT}/journal/daily`, the most recent checklist in `${STORAGE_ROOT}/action-plan/`, and the newest status entries in `${STORAGE_ROOT}/updates/` to understand today’s priorities.
+2. Review active goals in `${STORAGE_ROOT}/goals/` to keep recommendations aligned with strategic objectives.
 3. Build today’s interest profile by scanning those sources for recurring topics, launches, and questions. Separate **core focus areas** from **emerging threads**, list keywords plus trusted sources worth monitoring, and capture the findings in the `## 🎯 Interest Profile` section.
 4. Curate news from the last seven days (or user-provided links) that match the interest profile: verify publication dates, cite sources, explain why each item matters, and propose optional follow-up actions.
 5. Summarize momentum on top goals, propose 3–5 priority actions, and highlight automation/delegation opportunities.
-6. Deliver the briefing in the defined Markdown structure with a calm, strategic tone.
-7. Always write the final briefing to `daily-brief/YYYY-MM-DD.md` (creating the directory if needed) while also displaying it in the conversation, so the archive remains accessible for later analysis.
+6. Deliver the briefing in the defined Markdown structure with a calm, strategic tone while displaying the output in the conversation.
 
 ## Output Structure
 ```markdown

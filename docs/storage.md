@@ -26,7 +26,7 @@ updates/
 Each folder holds the same files previously inside the repository (daily notes, metrics history, project launchboards, PRDs, etc.).
 
 ## Working Locally
-- The repo now contains symbolic links (inside `storage/`) pointing to `${GREZOS_STORAGE_PATH}` so you can browse your real data (including projects) directly from this project directory.  
+- Each top-level feature directory (such as `notes/`, `journal/`, `projects/`) now contains a `storage/` symlink pointing to its counterpart beneath `${GREZOS_STORAGE_PATH}` so you can browse real data without committing it.  
 - Feel free to replace the symlinks with your own path (e.g., another drive) as long as `GREZOS_STORAGE_PATH` matches.
 
 ## Seeding Example Projects

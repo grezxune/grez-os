@@ -32,7 +32,7 @@ export GREZOS_STORAGE_PATH=~/Documents/grez-os
 mkdir -p "$GREZOS_STORAGE_PATH"/{action-plan,daily-brief,data,goals,journal,metrics,newsletter,notes,projects,todos,updates}
 ```
 
-`storage/` contains symlinks to these folders so you can browse data locally without committing it.
+Each feature directory in this repo includes a `storage/` symlink (for example `notes/storage`) that points to the matching folder under `${GREZOS_STORAGE_PATH}` so you can browse personal data locally without committing it.
 
 ### 3. Optional Config File
 ```bash
@@ -50,9 +50,9 @@ export GREZOS_STORAGE_PATH="$(jq -r '.storagePath' /path/to/grez-os/config/stora
 | Area | Description |
 |------|-------------|
 | **Agents** | Slash commands defined under `.codex/subagents/`, invoked via Codex CLI. |
-| **Projects** | Launchboards in `${GREZOS_STORAGE_PATH}/projects/` (symlink via `storage/projects`) with localized `AGENTS.md`, `UxStyle.md`, README, PRDs. |
+| **Projects** | Launchboards in `${GREZOS_STORAGE_PATH}/projects/` (surfaced locally at `projects/storage`) with localized `AGENTS.md`, `UxStyle.md`, README, PRDs. |
 | **External Storage** | `${GREZOS_STORAGE_PATH}` holds notes, goals, briefs, metrics, updates, etc. |
-| **Symlinks** | `storage/` mirrors personal directories for convenience (ignored by git). |
+| **Symlinks** | Each top-level feature folder contains its own `storage/` link for convenience (ignored by git). |
 | **PRDs** | Product Requirement Documents capture features; `/new-prd` guides creation. |
 
 ---
@@ -108,7 +108,7 @@ ${GREZOS_STORAGE_PATH}/
 ```
 
 Inside the repo:
-- `storage/` contains symlinks to each folder (projects included, ignored by git).
+- Every top-level data folder (e.g., `daily-brief/`, `notes/`, `journal/`) contains a `storage/` symlink pointing at the matching location in `${GREZOS_STORAGE_PATH}`.
 - `docs/storage.md` explains setup and portability.
 
 ---
@@ -130,9 +130,10 @@ Global rules (see `~/.codex/AGENTS.md`):
 
 1. Fork or clone the repo.
 2. Set `GREZOS_STORAGE_PATH` and create the external directories.
-3. Use slash commands via the Codex CLI to capture data.
-4. Launch new projects with `/new-project` (writes to `${GREZOS_STORAGE_PATH}/projects`) and plan features through `/new-prd`.
-5. Keep personal data out of git; share sanitized docs if collaborating.
+3. After editing prompts, run `bun run scripts/sync-prompts.ts` to refresh Codex CLI.
+4. Use slash commands via the Codex CLI to capture data.
+5. Launch new projects with `/new-project` (writes to `${GREZOS_STORAGE_PATH}/projects`) and plan features through `/new-prd`.
+6. Keep personal data out of git; share sanitized docs if collaborating.
 
 Because storage is external, you can safely share the repository while each contributor keeps their own data root.
 
@@ -144,7 +145,7 @@ Because storage is external, you can safely share the repository while each cont
 - `docs/storage.md` — personal storage configuration.
 - `docs/seeds/projects/sizably/` — SaaS launchboard seed.
 - `config/storage.example.json` — template for local storage config.
-- `.codex/subagents/` — definitions for all slash commands.
+- `prompts/commands/` — source Markdown for all slash commands (sync with `bun run scripts/sync-prompts.ts`).
 
 ---
 

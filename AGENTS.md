@@ -63,12 +63,7 @@ GrezOS acts as a **personal orchestration layer** — a dynamic system that adap
 │
 ├── AGENTS.md                     # Defines agent behavior and project scope
 ├── prompts/
-│   ├── 01_goal_alignment_prompt.md
-│   ├── 02_daily_brief_prompt.md
-│   ├── 03_weekly_review_prompt.md
-│   ├── 04_habit_tracker_prompt.md
-│   ├── 05_content_curator_prompt.md
-│   └── 06_daily_notes_prompt.md          # Surfaces and leverages daily brain dumps
+│   └── commands/               # Source of truth for Codex CLI prompts (sync via scripts/sync-prompts.ts)
 │
 └── projects/README.md            # Projects externalized to ${GREZOS_STORAGE_PATH}/projects (seed in docs/seeds/projects)
 ```
