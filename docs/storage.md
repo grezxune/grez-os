@@ -30,8 +30,7 @@ Each folder holds the same files previously inside the repository (daily notes, 
 - Feel free to replace the symlinks with your own path (e.g., another drive) as long as `GREZOS_STORAGE_PATH` matches.
 
 ## Seeding Example Projects
-- `docs/seeds/projects/sizably/` provides a reference launchboard.
-- Copy the seed folder into `${GREZOS_STORAGE_PATH}/projects/` (or run your own project generator) to bootstrap a new workspace.
+- Use the `/new-project` command to scaffold launchboards directly into `${GREZOS_STORAGE_PATH}/projects/`.
 
 ## Configuration Helper
 - Copy `config/storage.example.json` to `config/storage.json` to record a local path (git-ignored).  

@@ -12,7 +12,7 @@ GrezOS orchestrates your goals, routines, and creative work through a set of sla
 - Goal & product orchestration: `/new-project`, `/new-prd`, modular launchboards.
 - Creativity & communication: `/brain-dump`, `/brain-dump-analysis`, `/newsletter-research`.
 - Portable storage: personal artifacts stay under `${GREZOS_STORAGE_PATH}` (default `~/Documents/grez-os`).
-- SaaS-ready templates: Seed project `docs/seeds/projects/sizably/` with AGENTS, UxStyle, README, and PRDs.
+- SaaS project scaffolding powered by `/new-project` and `/new-prd`.
 
 ---
 
@@ -79,7 +79,7 @@ Each agent resolves `GREZOS_STORAGE_PATH` (fallback `~/Documents/grez-os`).
 
 ## 🗂 Example Project: Sizably
 
-`docs/seeds/projects/sizably/` ships a reference launchboard you can copy into `${GREZOS_STORAGE_PATH}/projects/`:
+Use `/new-project` to replicate the workflow directly into your `${GREZOS_STORAGE_PATH}/projects` directory.
 
 - `AGENTS.md` — project charter aligned with global standards.
 - `UxStyle.md` — design system (colors #0cd6f5 + black, typography, components).
@@ -143,7 +143,6 @@ Because storage is external, you can safely share the repository while each cont
 
 - `AGENTS.md` — GrezOS behavior and workflows.
 - `docs/storage.md` — personal storage configuration.
-- `docs/seeds/projects/sizably/` — SaaS launchboard seed.
 - `config/storage.example.json` — template for local storage config.
 - `prompts/commands/` — source Markdown for all slash commands (sync with `bun run scripts/sync-prompts.ts`).
 

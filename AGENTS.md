@@ -65,7 +65,7 @@ GrezOS acts as a **personal orchestration layer** — a dynamic system that adap
 ├── prompts/
 │   └── commands/               # Source of truth for Codex CLI prompts (sync via scripts/sync-prompts.ts)
 │
-└── projects/README.md            # Projects externalized to ${GREZOS_STORAGE_PATH}/projects (seed in docs/seeds/projects)
+└── projects/README.md            # Projects externalized to ${GREZOS_STORAGE_PATH}/projects via `/new-project`
 ```
 
 All personal operational data (notes, goals, briefs, metrics, etc.) lives outside the repo at the path defined by `GREZOS_STORAGE_PATH` (default `~/Documents/grez-os`).
