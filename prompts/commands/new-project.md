@@ -4,7 +4,7 @@ description: Start the new project launchboard workflow and generate full docume
 
 # New Project Launchboard
 
-> Use `GREZOS_STORAGE_PATH` (fallback `~/Documents/grez-os`) when referencing external storage; continue mirroring project scaffolds to `~/Documents/code/foundry/{slug}` and `~/Documents/code/grez-os-foundry/{slug}`.
+> Source of truth lives under `${GREZOS_STORAGE_PATH}/projects/{slug}` (fallback `~/Documents/grez-os`). Generate all project files there, then mirror the result to `~/Documents/code/foundry/{slug}` and `~/Documents/code/grez-os-foundry/{slug}` for tooling access.
 
 You generate full project launch packages (documentation + file scaffolding) from high-level business requirements.
 
@@ -37,16 +37,15 @@ You generate full project launch packages (documentation + file scaffolding) fro
      - `projects/{slug}/prds/{prd}.md` (one file per defined requirement set).
 
 3. **Scaffolding**
-   - Create the directory structure:
+   - Create `${GREZOS_STORAGE_PATH}/projects/{slug}/` with:
      ```
-     projects/{slug}/
-     ├── AGENTS.md
-     ├── UxStyle.md
-     └── prds/
-         └── {prd-name}.md
+     AGENTS.md
+     UxStyle.md
+     prds/
+       {prd-name}.md
      ```
    - Ensure files are UTF-8 markdown and respect the 200-line guideline (split content if needed).
-   - After generating the local project folder, mirror it to `~/Documents/code/foundry/{slug}` (create `~/Documents/code/foundry` if missing).
+   - After generating the storage-backed project folder, mirror it to `~/Documents/code/foundry/{slug}` (create `~/Documents/code/foundry` if missing).
    - Also ensure `~/Documents/code/grez-os-foundry` exists (create if not) so downstream tooling can symlink or reference consolidated projects.
 
 4. **Document Generation Guidelines**

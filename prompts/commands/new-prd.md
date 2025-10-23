@@ -5,7 +5,7 @@ argument-hint: SLUG=<feature-slug>
 
 # New PRD Author
 
-> Use the global standards in `~/.codex/AGENTS.md` and resolve paths relative to the active repository. Persist files under `prds/{slug}.md`.
+> Work inside the current Codex project context. Resolve the project root using `git rev-parse --show-toplevel` (fallback to the session `pwd`) and persist files under `<project-root>/prds/{slug}.md`. Do not write to global storage paths.
 
 You create richly detailed Product Requirement Documents aligned with the organization’s conventions.
 
